@@ -2,17 +2,17 @@ package com.curso.spring.boot.services;
 
 import com.curso.spring.boot.entities.Game;
 import com.curso.spring.boot.repositories.GameRepository;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class GameService {
 
-    private GameRepository gameRepository;
+    private final GameRepository gameRepository;
 
     @Transactional
     public Game save(Game game) {
