@@ -1,5 +1,6 @@
 package com.curso.spring.boot.controller;
 
+import com.curso.spring.boot.dto.GameDTO;
 import com.curso.spring.boot.dto.GameMinDTO;
 import com.curso.spring.boot.entities.Game;
 import com.curso.spring.boot.services.GameService;
@@ -20,8 +21,8 @@ public class GameController {
     private GameService gameService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Game> findById(@PathVariable("id") Long id) {
-        return ResponseEntity.ok(gameService.findById(id));
+    public ResponseEntity<GameDTO> findById(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(new GameDTO(gameService.findById(id)));
     }
 
     @GetMapping
@@ -30,6 +31,4 @@ public class GameController {
                 .stream().map(GameMinDTO::new)
                 .toList());
     }
-
-
 }
