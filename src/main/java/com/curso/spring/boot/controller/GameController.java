@@ -1,6 +1,5 @@
 package com.curso.spring.boot.controller;
 
-
 import com.curso.spring.boot.dto.GameMinDTO;
 import com.curso.spring.boot.entities.Game;
 import com.curso.spring.boot.services.GameService;

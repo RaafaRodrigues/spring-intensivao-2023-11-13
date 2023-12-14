@@ -2,6 +2,7 @@ package com.curso.spring.boot.dto;
 
 import com.curso.spring.boot.entities.Game;
 import lombok.*;
+import org.springframework.beans.BeanUtils;
 
 @Data
 @AllArgsConstructor
@@ -14,10 +15,6 @@ public class GameMinDTO {
     private String shortDescription;
 
     public GameMinDTO(Game entity) {
-       this.id = entity.getId();
-       this.title = entity.getTitle();
-       this.year = entity.getYear();
-       this.imgUrl = entity.getImgUrl();
-       this.shortDescription = entity.getShortDescription();
+        BeanUtils.copyProperties(entity, this);
     }
 }
