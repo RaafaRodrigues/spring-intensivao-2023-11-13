@@ -1,11 +1,11 @@
 package com.curso.spring.boot.services;
 
 import com.curso.spring.boot.entities.Game;
+import com.curso.spring.boot.projections.GameMinProjection;
 import com.curso.spring.boot.repositories.GameRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 
 @Service
@@ -34,4 +34,10 @@ public class GameService {
     public List<Game> findAllAndOrderByTitle() {
         return gameRepository.findAllByOrderByTitleAsc();
     }
+
+    @Transactional(readOnly = true)
+    public List<GameMinProjection> findByListId(Long listId) {
+        return gameRepository.searchByList(listId);
+    }
+
 }

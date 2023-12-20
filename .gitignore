@@ -7,7 +7,7 @@ mvnw
 mvnw.cmd
 maven-wrapper.properties
 maven-wrapper.jar
-
+.data
 ### STS ###
 .apt_generated
 .classpath

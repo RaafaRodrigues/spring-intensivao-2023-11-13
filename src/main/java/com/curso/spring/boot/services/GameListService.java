@@ -12,6 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Service
 public class GameListService {
+
     private final GameListRepository repository;
 
     @Transactional(readOnly = true)

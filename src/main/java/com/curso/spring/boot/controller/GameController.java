@@ -1,9 +1,7 @@
 package com.curso.spring.boot.controller;
 
 import com.curso.spring.boot.dto.GameDTO;
-import com.curso.spring.boot.dto.GameListDTO;
 import com.curso.spring.boot.dto.GameMinDTO;
-import com.curso.spring.boot.services.GameListService;
 import com.curso.spring.boot.services.GameService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +19,7 @@ public class GameController {
 
     private final GameService gameService;
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<GameDTO> findById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(new GameDTO(gameService.findById(id)));
     }

@@ -1,6 +1,7 @@
 package com.curso.spring.boot.dto;
 
 import com.curso.spring.boot.entities.Game;
+import com.curso.spring.boot.projections.GameMinProjection;
 import lombok.*;
 import org.springframework.beans.BeanUtils;
 
@@ -15,6 +16,9 @@ public class GameMinDTO {
     private String shortDescription;
 
     public GameMinDTO(Game entity) {
+        BeanUtils.copyProperties(entity, this);
+    }
+    public GameMinDTO(GameMinProjection entity) {
         BeanUtils.copyProperties(entity, this);
     }
 }
