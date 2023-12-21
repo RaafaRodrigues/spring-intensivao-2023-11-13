@@ -5,7 +5,6 @@ import com.curso.spring.boot.dto.GameMinDTO;
 import com.curso.spring.boot.dto.GameReplacementDTO;
 import com.curso.spring.boot.services.GameListService;
 import com.curso.spring.boot.services.GameService;
-import jakarta.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
